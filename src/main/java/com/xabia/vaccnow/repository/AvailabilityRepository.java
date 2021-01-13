@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.xabia.vaccnow.model.Branch;
+import com.xabia.vaccnow.model.Branches;
 import com.xabia.vaccnow.model.TimeSlot;
 import com.xabia.vaccnow.model.Vaccines;
 
@@ -16,8 +16,8 @@ public class AvailabilityRepository {
     @Autowired
     JdbcTemplate template;
 
-    public List<Branch> getAllBranches(){
-        List<Branch> branches = template.query("select branch_id, name, address from branches",(result,rowNum)->new Branch(result.getInt("branch_id"),
+    public List<Branches> getAllBranches(){
+        List<Branches> branches = template.query("select branch_id, name, address from branches",(result,rowNum)->new Branches(result.getInt("branch_id"),
                 result.getString("name"), result.getString("address")));
         return branches;
     }

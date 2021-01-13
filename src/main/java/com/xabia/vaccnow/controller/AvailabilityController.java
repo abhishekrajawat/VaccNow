@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xabia.vaccnow.model.Branch;
+import com.xabia.vaccnow.model.Branches;
 import com.xabia.vaccnow.model.TimeSlot;
 import com.xabia.vaccnow.model.Vaccines;
 import com.xabia.vaccnow.services.AvailabilityServices;
@@ -21,7 +21,7 @@ public class AvailabilityController {
 
     @RequestMapping(value="/branches", method = RequestMethod.GET)
     @ResponseBody
-    public List<Branch> getAllBranches(){
+    public List<Branches> getAllBranches(){
         return availabilityService.getAllBranches();
     }
 

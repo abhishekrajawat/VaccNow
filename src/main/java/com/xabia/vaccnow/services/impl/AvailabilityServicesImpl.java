@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.xabia.vaccnow.model.Branch;
+import com.xabia.vaccnow.model.Branches;
 import com.xabia.vaccnow.model.TimeSlot;
 import com.xabia.vaccnow.model.Vaccines;
 import com.xabia.vaccnow.repository.AvailabilityRepository;
@@ -19,7 +19,7 @@ public class AvailabilityServicesImpl implements AvailabilityServices {
 	AvailabilityRepository availabilityRepo;
 
 	@Override
-	public List<Branch> getAllBranches() {
+	public List<Branches> getAllBranches() {
 		return availabilityRepo.getAllBranches();
 	}
 
