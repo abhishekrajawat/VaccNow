@@ -8,8 +8,8 @@ import com.xabia.vaccnow.model.Vaccination;
 
 public interface ReportingService {
 	
-	public List<Vaccination> appliedvaccination(@PathVariable("branchid") int branch_id);
-	public List<Vaccination> appliedvaccinationperday(@PathVariable("date") String date);
-	public List<Vaccination> listAllConfirmedVaccination(@PathVariable("date1") String date1, @PathVariable("date2") String date2);
+	public List<Vaccination> vaccination(@PathVariable("branchid") int branch_id);
+	public List<Vaccination> vaccination(@PathVariable("date") String date);
+	public List<Vaccination> listConfirmedVaccination(@PathVariable("date1") String date1, @PathVariable("date2") String date2);
 
 }

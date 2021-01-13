@@ -19,19 +19,17 @@ public class ReportingController {
 
     @RequestMapping(value="/branches/{branchid}/appliedvaccination", method = RequestMethod.GET)
     @ResponseBody
-    public List<Vaccination> appliedvaccination(@PathVariable("branchid") int branch_id){
-        return reportingService.appliedvaccination(branch_id);
+    public List<Vaccination> vaccination(@PathVariable("branchid") int branch_id){
+        return reportingService.vaccination(branch_id);
     }
 
     @RequestMapping(value="/appliedvaccinationperday/{date}", method = RequestMethod.GET)
-	public List<Vaccination> appliedvaccinationperday(@PathVariable("date") String date){
-		
-		return reportingService.appliedvaccinationperday(date);
+	public List<Vaccination> vaccination(@PathVariable("date") String date){
+		return reportingService.vaccination(date);
 	}
 	
     @RequestMapping(value="/listallconfirmedvaccination/{date1}/{date2}", method = RequestMethod.GET)
-	public List<Vaccination> listAllConfirmedVaccination(@PathVariable("date1") String date1, @PathVariable("date2") String date2){
-		
-		return reportingService.listAllConfirmedVaccination(date1, date2);
+	public List<Vaccination> listConfirmedVaccination(@PathVariable("date1") String date1, @PathVariable("date2") String date2){
+		return reportingService.listConfirmedVaccination(date1, date2);
 	}
 }

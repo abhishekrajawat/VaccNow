@@ -19,7 +19,7 @@ public class VaccinationController {
 	@Autowired
 	VaccinationService vaccinationServices;
 
-	@RequestMapping(value = "/schedulevaccination", method = RequestMethod.GET)
+	@RequestMapping(value = "/schedulevaccination", method = RequestMethod.POST)
 	@ResponseBody
 	public String schedulevaccination(@RequestParam("branch_id") int branch_id,
 			@RequestParam("vaccine_id") int vaccine_id, @RequestParam("timeslot") String timeslot,
@@ -32,7 +32,7 @@ public class VaccinationController {
 		}
 	}
 
-	@RequestMapping(value = "/choosepayment", method = RequestMethod.GET)
+	@RequestMapping(value = "/choosepayment", method = RequestMethod.POST)
 	@ResponseBody
 	public List<String> choosepayment(@RequestParam("user_id") int user_id) {
 		return PaymentOptions.getPaymentOptions();
